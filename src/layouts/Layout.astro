@@ -1,0 +1,105 @@
+---
+import sections from "../data/products.json";
+
+interface Props {
+    title: string;
+}
+const menuElements = sections
+    .toSorted(({ id: id0 }, { id: id1 }) => id0 - id1)
+    .map(({ title }) => title);
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="description" content="Astro description" />
+        <meta name="viewport" content="width=device-width" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <meta name="generator" content={Astro.generator} />
+        <title>{title}</title>
+    </head>
+    <body class="mx-auto bg-[#FFFDFA]">
+        <header class="mx-auto">
+            <nav class="py-8 flex flex-col justify-center items-center gap-6">
+                <a href="/">
+                    <h1 class="font-bold text-6xl">
+                        Primero <span class="rn-circle">Cafe</span>
+                    </h1>
+                </a>
+                <div class="mx-auto w-2/5 flex justify-center gap-3">
+                    {
+                        menuElements.map((element) => (
+                            <a href={`/menu/${element.toLowerCase()}`}>
+                                {element}
+                            </a>
+                        ))
+                    }
+                </div>
+            </nav>
+        </header>
+        <main class="mx-auto w-11/12">
+            <slot />
+        </main>
+        <footer>
+            <div class="mt-8 pb-4 flex justify-center items-center gap-4">
+                BUEN DIA! 🤎
+            </div>
+        </footer>
+    </body>
+</html>
+
+<script>
+    import { annotate } from "rough-notation";
+
+    const urlMenu = document.location.pathname.split("/").at(-1);
+    if (urlMenu) {
+        document
+            .querySelector(`header a[href='/menu/${urlMenu}']`)
+            .classList.add("rn-underline");
+    }
+    document.querySelectorAll(".rn-circle").forEach((el: HTMLElement) => {
+        const annotation = annotate(el, {
+            type: "circle",
+            color: "#FFD54F",
+            padding: [4, 12],
+            strokeWidth: 2,
+            iterations: 6,
+        });
+        annotation.show();
+    });
+
+    document.querySelectorAll(".rn-underline").forEach((el: HTMLElement) => {
+        const annotation = annotate(el, {
+            type: "underline",
+            color: "#FFD54F",
+            padding: [4, 12],
+            strokeWidth: 2,
+            iterations: 6,
+        });
+        annotation.show();
+    });
+
+    document.querySelectorAll(".rn-box").forEach((el: HTMLElement) => {
+        const annotation = annotate(el, {
+            type: "box",
+            color: "#FFD54F",
+            padding: [4, 12],
+            strokeWidth: 2,
+            iterations: 6,
+        });
+        annotation.show();
+    });
+
+    document.querySelectorAll(".rn-highlight").forEach((el: HTMLElement) => {
+        const annotation = annotate(el, {
+            type: "highlight",
+            color: "#000",
+            padding: [4, 12],
+            strokeWidth: 2,
+            iterations: 6,
+        });
+        annotation.show();
+    });
+</script>

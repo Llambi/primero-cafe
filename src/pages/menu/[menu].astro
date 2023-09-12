@@ -1,0 +1,23 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import sections from "../../data/products.json";
+import Product from "../../components/Product.astro";
+import Section from "../../components/Section.astro";
+
+export function getStaticPaths() {
+    return sections.map(({ title }) => ({
+        params: { menu: title.toLowerCase() },
+    }));
+}
+
+const { menu } = Astro.params;
+const { title, subtitle, products } = sections.find(
+    ({ title }) => title.toLowerCase() === menu
+);
+---
+
+<Layout title="Primero cafe: Carta">
+    <Section title={title} subtitle={subtitle}>
+        {products.map((product) => <Product {...product} />)}
+    </Section>
+</Layout>

@@ -1,0 +1,44 @@
+[
+  {
+    "id":0,
+    "title": "Desayunos",
+    "subtitle": "PACK DESAYUNO: CAFE SOLO, CON LECHE O AMERICANO",
+    "products":[
+      { "name": "Café de especialidad + pincho", "price": 3.60 },
+      { "name": "Café de especialidad + pantumaca + aceite AOVE", "price": 4.20 },
+      { "name": "Café de especialidad + pantumaca jamón serrano + aceite de AOVE", "price": 6.50 },
+      { "name": "Café de especialidad + mermelada y mantequilla", "price": 4.20 },
+      { "name": "Café de especialidad + bizcocho casero", "price": 4.00 },
+      { "name": "Café de especialidad + tosta de guacamole", "price": 7.00 },
+      { "name": "Café de especialidad + crema de cacahuete y plátano caramelizado", "price": 7.00 },
+      { "name": "Café de especialidad + tosta con ajo negro y limón caramelizado", "price": 6.50 }
+    ]
+  },
+  {
+    "id": 1,
+    "title": "Pinchos",
+    "subtitle": "",
+    "products": [
+      { "name": "Pollo empanado con salsa especial a base de mostaza, con lechuga y rodajas de tomate", "price": 2.50 },
+      { "name": "Bestseller! Tortilla de patata y cebolla", "price": 3.00 },
+      { "name": "Hamburguesa criolla de carne de cerdo con pickels y rodajas de tomate", "price": 2.50 },
+      { "name": "Queso de cabra con espinacas y pimientos de piquillo", "price": 3.00 },
+      { "name": "Queso Brie, con rodajas de tomate y nuestra salsa de alioli de espinaca", "price": 3.00 }
+
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Tostas",
+    "subtitle": "PAN ECOLÓGICO DE OBRADOR SISÓN",
+    "products": [
+      { "name": "Guacamole con aceite AOVE", "price": 6.00 },
+      { "name": "Pan tumaca (tomate fresco triturado con un toque de ajo) con aceite AOVE", "price": 3.50 },
+      { "name": "Pan tumaca con jamón serrano y aceite AOVE", "price": 5.00 },
+      { "name": "Mantequilla de ajo negro", "price": 5.00 },
+      { "name": "Mermelada de sabores a escoger y mantequilla", "price": 3.50 },
+      { "name": "Crema mascarpone de cacahuete y plátano caramelizado", "price": 6.00 }
+
+    ]
+  }
+]
