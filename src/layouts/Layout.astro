@@ -1,4 +1,5 @@
 ---
+import Menu from "../components/menu.astro";
 import sections from "../data/products.json";
 
 interface Props {
@@ -22,22 +23,7 @@ const { title } = Astro.props;
     </head>
     <body class="mx-auto bg-[#FFFDFA]">
         <header class="mx-auto mb-4">
-            <nav class="py-8 flex flex-col justify-center items-center gap-9">
-                <a href="/">
-                    <h1 class="font-bold text-6xl">
-                        Primero <span class="rn-circle">Cafe</span>
-                    </h1>
-                </a>
-                <div class="mx-auto flex justify-center gap-6">
-                    {
-                        menuElements.map((element) => (
-                            <a href={`/menu/${element.toLowerCase()}`}>
-                                {element}
-                            </a>
-                        ))
-                    }
-                </div>
-            </nav>
+            <Menu {menuElements} />
         </header>
         <main class="mx-auto w-11/12">
             <slot />
