@@ -21,14 +21,14 @@ const { title } = Astro.props;
         <title>{title}</title>
     </head>
     <body class="mx-auto bg-[#FFFDFA]">
-        <header class="mx-auto">
-            <nav class="py-8 flex flex-col justify-center items-center gap-6">
+        <header class="mx-auto mb-4">
+            <nav class="py-8 flex flex-col justify-center items-center gap-9">
                 <a href="/">
                     <h1 class="font-bold text-6xl">
                         Primero <span class="rn-circle">Cafe</span>
                     </h1>
                 </a>
-                <div class="mx-auto w-2/5 flex justify-center gap-3">
+                <div class="mx-auto flex justify-center gap-6">
                     {
                         menuElements.map((element) => (
                             <a href={`/menu/${element.toLowerCase()}`}>
@@ -96,7 +96,7 @@ const { title } = Astro.props;
         const annotation = annotate(el, {
             type: "highlight",
             color: "#000",
-            padding: [4, 12],
+            padding: [8, 12],
             strokeWidth: 2,
             iterations: 6,
         });

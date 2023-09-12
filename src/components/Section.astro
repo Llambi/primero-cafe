@@ -2,8 +2,10 @@
 const { title, subtitle } = Astro.props;
 ---
 
-<section class="mx-auto py-2 w-10/12 rn-box">
-    <h2 class="text-center font-bold text-lg">{title}</h2>
+<section class="mx-auto py-2 px-1 w-10/12 rn-box">
+    <h2 class="text-center font-semibold text-2xl">
+        {title}
+    </h2>
     {
         subtitle && (
             <p class="px-2 py-1 mx-auto mb-5 w-fit font-thin text-xs text-center bg-gray-300/10 rounded-md">
