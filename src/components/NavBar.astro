@@ -18,7 +18,7 @@ const { menuElements } = Astro.props;
 </nav>
 
 <script>
-    import { annotateElement } from "../lib/RoughNotation.mts";
+    import { annotateElement } from "@lib/RoughNotation.mts";
 
     const urlMenuSelected = document.location.pathname.split("/").at(-1);
     if (urlMenuSelected) {

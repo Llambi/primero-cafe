@@ -1,19 +1,19 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import sections from "../data/products.json";
-import Product from "../components/Product.astro";
-import Section from "../components/Section.astro";
+import Layout from "@layouts/Layout.astro";
+import CoffeeMenus from "@data/CoffeMenus.json";
+import CoffeeProduct from "@components/CoffeProduct.astro";
+import CoffeeSection from "@components/CoffeeSection.astro";
 ---
 
 <Layout title="Primero cafe">
     <div class="flex flex-col gap-6">
         {
-            sections.map(({ title, subtitle, products }) => (
-                <Section title={title} subtitle={subtitle}>
+            CoffeeMenus.map(({ title, subtitle, products }) => (
+                <CoffeeSection title={title} subtitle={subtitle}>
                     {products.map((product) => (
-                        <Product {...product} />
+                        <CoffeeProduct {...product} />
                     ))}
-                </Section>
+                </CoffeeSection>
             ))
         }
     </div>

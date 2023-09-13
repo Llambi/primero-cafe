@@ -1,13 +1,13 @@
 ---
-import Menu from "../components/menu.astro";
-import sections from "../data/products.json";
+import NavBar from "@components/NavBar.astro";
+import Menus from "@data/CoffeMenus.json";
 
 interface Props {
     title: string;
 }
-const menuElements = sections
-    .toSorted(({ id: id0 }, { id: id1 }) => id0 - id1)
-    .map(({ title }) => title);
+const menuElements = Menus.sort(({ id: id0 }, { id: id1 }) => id0 - id1).map(
+    ({ title }) => title
+);
 const { title } = Astro.props;
 ---
 
@@ -23,7 +23,7 @@ const { title } = Astro.props;
     </head>
     <body class="mx-auto bg-[#FFFDFA]">
         <header class="mx-auto mb-4">
-            <Menu {menuElements} />
+            <NavBar {menuElements} />
         </header>
         <main class="mx-auto w-11/12">
             <slot />
