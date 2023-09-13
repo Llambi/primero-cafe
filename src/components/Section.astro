@@ -2,18 +2,39 @@
 const { title, subtitle } = Astro.props;
 ---
 
-<section class="mx-auto py-2 px-1 w-10/12 rn-box">
-    <h2 class="text-center font-semibold text-2xl">
-        {title}
-    </h2>
-    {
-        subtitle && (
-            <p class="px-2 py-1 mx-auto mb-5 w-fit font-thin text-xs text-center bg-gray-300/10 rounded-md">
-                {subtitle}
-            </p>
-        )
+<section-coffe>
+    <section class="mx-auto py-2 px-1 w-10/12 rn-box">
+        <h2 class="text-center font-semibold text-2xl">
+            {title}
+        </h2>
+        {
+            subtitle && (
+                <p class="px-2 py-1 mx-auto mb-5 w-fit font-thin text-xs text-center bg-gray-300/10 rounded-md">
+                    {subtitle}
+                </p>
+            )
+        }
+        <div class="flex flex-col gap-8 flex-wrap">
+            <slot />
+        </div>
+    </section>
+</section-coffe>
+
+<script>
+    import { annotateElement } from "../lib/RoughNotation.mts";
+
+    class SectionCoffe extends HTMLElement {
+        constructor() {
+            super();
+            const $section = this.querySelector("section");
+            annotateElement($section, {
+                type: "box",
+                color: "#FFD54F",
+                padding: [4, 12],
+                strokeWidth: 2,
+                iterations: 6,
+            });
+        }
     }
-    <div class="flex flex-col gap-8 flex-wrap">
-        <slot />
-    </div>
-</section>
+    customElements.define("section-coffe", SectionCoffe);
+</script>
