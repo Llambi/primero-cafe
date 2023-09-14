@@ -3,7 +3,7 @@ const { menuElements } = Astro.props;
 ---
 
 <nav class="py-8 flex flex-col justify-center items-center gap-9">
-    <a href="/">
+    <a href="/primero-cafe">
         <h1 class="font-bold text-6xl">
             Primero <span id="title-circle">Cafe</span>
         </h1>
@@ -11,7 +11,9 @@ const { menuElements } = Astro.props;
     <div class="mx-auto flex justify-center gap-6">
         {
             menuElements.map((element: String) => (
-                <a href={`/menu/${element.toLowerCase()}`}>{element}</a>
+                <a href={`/primero-cafe/menu/${element.toLowerCase()}`}>
+                    {element}
+                </a>
             ))
         }
     </div>
@@ -19,10 +21,13 @@ const { menuElements } = Astro.props;
 
 <script>
     import { annotateElement } from "@lib/RoughNotation.mts";
-
-    const urlMenuSelected = document.location.pathname.split("/").at(-1);
-    if (urlMenuSelected) {
-        annotateElement(`header nav a[href='/menu/${urlMenuSelected}']`, {
+    import { Config } from "@lib/Config.mts";
+    const urlMenuSelected = document.location.pathname
+        .split("/")
+        .at(-1)
+        .toLocaleLowerCase();
+    if (urlMenuSelected && urlMenuSelected !== Config.BASE_URL) {
+        annotateElement(`header nav a[href$="${urlMenuSelected}"]`, {
             type: "underline",
             color: "#FFD54F",
             padding: [4, 12],
