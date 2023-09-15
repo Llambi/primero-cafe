@@ -1,44 +1,137 @@
 [
   {
     "id":0,
-    "title": "Desayunos",
-    "subtitle": "PACK DESAYUNO: CAFE SOLO, CON LECHE O AMERICANO",
-    "products":[
-      { "name": "Café de especialidad + pincho", "price": 3.60 },
-      { "name": "Café de especialidad + pantumaca + aceite AOVE", "price": 4.20 },
-      { "name": "Café de especialidad + pantumaca jamón serrano + aceite de AOVE", "price": 6.50 },
-      { "name": "Café de especialidad + mermelada y mantequilla", "price": 4.20 },
-      { "name": "Café de especialidad + bizcocho casero", "price": 4.00 },
-      { "name": "Café de especialidad + tosta de guacamole", "price": 7.00 },
-      { "name": "Café de especialidad + crema de cacahuete y plátano caramelizado", "price": 7.00 },
-      { "name": "Café de especialidad + tosta con ajo negro y limón caramelizado", "price": 6.50 }
+    "title": "Bebidas",
+    "categories":[
+      {
+        "id":0,
+        "title": "Cafés Especialidad",
+        "subtitle": "",
+        "products":[
+          { "name": "Espresso", "price": 1.60},
+          { "name": "Doble", "price": 2.00},
+          { "name": "Americano", "price": 1.70},
+          { "name": "Cortado", "price": 1.60},
+          { "name": "Con leche", "price": 1.70},
+          { "name": "Con Latte", "price": 2.60},
+          { "name": "Capuchino", "price": 2.80},
+          { "name": "Capuchino Naranja", "price": 3.30},
+          { "name": "Capuchino Avellana", "price": 3.30},
+          { "name": "Capuchino Chai", "price": 3.30},
+          { "name": "Capuchino Nutella", "price": 3.30},
+          { "name": "Capuchino Irlandes", "price": 3.30},
+          { "name": "Moka", "price": 3.50},
+          { "name": "Shakerato", "price": 2.80},
+          { "name": "Flat White", "price": 2.70},
+          { "name": "Frapuccino", "price": 4.00},
+          { "name": "Mocca Master", "price": 1.70},
+          { "name": "Mocca Filtro V60", "price": 5.50},
+          { "name": "Cold Brew", "price": 3.00},
+          { "name": "Coffee Tonic", "price": 6.00}
+        ]
+      },
+      {
+        "id":1,
+        "title": "Tés Ecológicos",
+        "subtitle": "",
+        "products":[
+          { "name": "Stevia", "price": 2.40},
+          { "name": "Pu Erh", "price": 2.30},
+          { "name": "Darjeeling India", "price": 2.60},
+          { "name": "Earl Grey", "price": 2.40},
+          { "name": "Assam India", "price": 2.50},
+          { "name": "E. Breakfast", "price": 2.30},
+          { "name": "Rooibos", "price": 2.30},
+          { "name": "Gunpouder", "price": 2.30},
+          { "name": "Bancha Japones", "price": 2.60},
+          { "name": "Té V Moruno", "price": 2.60}
+        ]
+      },
+      {
+        "id":2,
+        "title": "Infusiones Frescas",
+        "subtitle": "",
+        "products":[
+          { "name": "Café Verde", "price": 2.40},
+          { "name": "Jengibre - Limón", "price": 2.90}
+        ]
+      },
+      {
+        "id":3,
+        "title": "Cervezas",
+        "subtitle": "",
+        "products":[
+          { "name": "0,0", "price": 2.70},
+          { "name": "1906", "price": 2.70}
+        ]
+      },
+      {
+        "id":4,
+        "title": "Otros",
+        "subtitle": "",
+        "products":[
+          { "name": "H20", "price": 2.00},
+          { "name": "Refrescos", "price": 2.80},
+          { "name": "Zumo Natural", "price": 2.80}
+        ]
+      }
     ]
   },
   {
     "id": 1,
-    "title": "Pinchos",
-    "subtitle": "",
-    "products": [
-      { "name": "Pollo empanado con salsa especial a base de mostaza, con lechuga y rodajas de tomate", "price": 2.50 },
-      { "name": "Bestseller! Tortilla de patata y cebolla", "price": 3.00 },
-      { "name": "Hamburguesa criolla de carne de cerdo con pickels y rodajas de tomate", "price": 2.50 },
-      { "name": "Queso de cabra con espinacas y pimientos de piquillo", "price": 3.00 },
-      { "name": "Queso Brie, con rodajas de tomate y nuestra salsa de alioli de espinaca", "price": 3.00 }
-
+    "title": "Desayunos",
+    "categories":[
+      {
+        "id":0,
+        "title": "Desayunos",
+        "subtitle": "PACK DESAYUNO: CAFE SOLO, CON LECHE O AMERICANO",
+        "products":[
+          { "name": "Café de especialidad + pincho", "price": 3.60 },
+          { "name": "Café de especialidad + pantumaca + aceite AOVE", "price": 4.20 },
+          { "name": "Café de especialidad + pantumaca jamón serrano + aceite de AOVE", "price": 6.50 },
+          { "name": "Café de especialidad + mermelada y mantequilla", "price": 4.20 },
+          { "name": "Café de especialidad + bizcocho casero", "price": 4.00 },
+          { "name": "Café de especialidad + tosta de guacamole", "price": 7.00 },
+          { "name": "Café de especialidad + crema de cacahuete y plátano caramelizado", "price": 7.00 },
+          { "name": "Café de especialidad + tosta con ajo negro y limón caramelizado", "price": 6.50 }
+        ]
+      }
     ]
   },
   {
     "id": 2,
+    "title": "Pinchos",
+    "categories":[
+      {
+        "id":0,
+        "title": "Pinchos",
+        "subtitle": "",
+        "products": [
+          { "name": "Pollo empanado con salsa especial a base de mostaza, con lechuga y rodajas de tomate", "price": 2.50 },
+          { "name": "Bestseller! Tortilla de patata y cebolla", "price": 3.00 },
+          { "name": "Hamburguesa criolla de carne de cerdo con pickels y rodajas de tomate", "price": 2.50 },
+          { "name": "Queso de cabra con espinacas y pimientos de piquillo", "price": 3.00 },
+          { "name": "Queso Brie, con rodajas de tomate y nuestra salsa de alioli de espinaca", "price": 3.00 }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 3,
     "title": "Tostas",
-    "subtitle": "PAN ECOLÓGICO DE OBRADOR SISÓN",
-    "products": [
-      { "name": "Guacamole con aceite AOVE", "price": 6.00 },
-      { "name": "Pan tumaca (tomate fresco triturado con un toque de ajo) con aceite AOVE", "price": 3.50 },
-      { "name": "Pan tumaca con jamón serrano y aceite AOVE", "price": 5.00 },
-      { "name": "Mantequilla de ajo negro", "price": 5.00 },
-      { "name": "Mermelada de sabores a escoger y mantequilla", "price": 3.50 },
-      { "name": "Crema mascarpone de cacahuete y plátano caramelizado", "price": 6.00 }
-
+    "categories":[{
+        "id":0,
+        "title": "Tostas",
+        "subtitle": "PAN ECOLÓGICO DE OBRADOR SISÓN",
+        "products": [
+          { "name": "Guacamole con aceite AOVE", "price": 6.00 },
+          { "name": "Pan tumaca (tomate fresco triturado con un toque de ajo) con aceite AOVE", "price": 3.50 },
+          { "name": "Pan tumaca con jamón serrano y aceite AOVE", "price": 5.00 },
+          { "name": "Mantequilla de ajo negro", "price": 5.00 },
+          { "name": "Mermelada de sabores a escoger y mantequilla", "price": 3.50 },
+          { "name": "Crema mascarpone de cacahuete y plátano caramelizado", "price": 6.00 }
+        ]
+      }
     ]
   }
 ]

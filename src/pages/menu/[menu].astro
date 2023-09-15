@@ -11,13 +11,19 @@ export function getStaticPaths() {
 }
 
 const { menu } = Astro.params;
-const { title, subtitle, products } = CoffeeMenus.find(
+const { title, categories } = CoffeeMenus.find(
     ({ title }) => title.toLowerCase() === menu
 );
 ---
 
 <Layout title="Primero cafe: Carta">
-    <CoffeeSection title={title} subtitle={subtitle}>
-        {products.map((product) => <CoffeeProduct {...product} />)}
-    </CoffeeSection>
+    {
+        categories.map(({ title, subtitle, products }) => (
+            <CoffeeSection title={title} subtitle={subtitle}>
+                {products.map((product) => (
+                    <CoffeeProduct {...product} />
+                ))}
+            </CoffeeSection>
+        ))
+    }
 </Layout>
