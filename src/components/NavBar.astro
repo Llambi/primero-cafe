@@ -22,18 +22,24 @@ const { menuElements } = Astro.props;
 <script>
     import { annotateElement } from "@lib/RoughNotation.mts";
     import { Config } from "@lib/Config.mts";
-    const urlMenuSelected = document.location.pathname
-        .split("/")
-        .at(-1)
-        .toLocaleLowerCase();
+
+    let path = document.location.pathname;
+    if (path.endsWith("/")) {
+        path = document.location.pathname.slice(0, -1);
+    }
+
+    const urlMenuSelected = path.split("/").at(-1).toLocaleLowerCase();
     if (urlMenuSelected && urlMenuSelected !== Config.BASE_URL) {
-        annotateElement(`header nav a[href$="${urlMenuSelected}"]`, {
-            type: "underline",
-            color: "#FFD54F",
-            padding: [4, 12],
-            strokeWidth: 2,
-            iterations: 6,
-        });
+        annotateElement(
+            `header nav a[href="/primero-cafe/menu/${urlMenuSelected}"]`,
+            {
+                type: "underline",
+                color: "#FFD54F",
+                padding: [4, 12],
+                strokeWidth: 2,
+                iterations: 6,
+            }
+        );
     }
 
     annotateElement("#title-circle", {
