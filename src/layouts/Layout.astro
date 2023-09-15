@@ -21,17 +21,29 @@ const { title } = Astro.props;
         <meta name="generator" content={Astro.generator} />
         <title>{title}</title>
     </head>
-    <body class="mx-auto bg-[#FFFDFA]">
-        <header class="mx-auto mb-4">
-            <NavBar {menuElements} />
-        </header>
-        <main class="mx-auto w-11/12">
-            <slot />
-        </main>
-        <footer>
-            <div class="mt-8 pb-4 flex justify-center items-center gap-4">
-                BUEN DIA! 🤎
-            </div>
-        </footer>
+    <body class="bg-[#FFFDFA]">
+        <div class="overflow-hidden">
+            <header class="mx-auto mb-4">
+                <NavBar {menuElements} />
+            </header>
+            <main>
+                <slot />
+            </main>
+            <footer>
+                <svg viewBox="0 0 960 270" width="100%" height="auto">
+                    <path
+                        d="M0 210L20 215.5C40 221 80 232 120 230.8C160 229.7 200 216.3 240 208.5C280 200.7 320 198.3 360 201C400 203.7 440 211.3 480 218.3C520 225.3 560 231.7 600 236.3C640 241 680 244 720 243.5C760 243 800 239 840 235.3C880 231.7 920 228.3 940 226.7L960 225L960 271L940 271C920 271 880 271 840 271C800 271 760 271 720 271C680 271 640 271 600 271C560 271 520 271 480 271C440 271 400 271 360 271C320 271 280 271 240 271C200 271 160 271 120 271C80 271 40 271 20 271L0 271Z"
+                        fill="#FFD54F"
+                        stroke-linecap="round"
+                        stroke-linejoin="miter"></path>
+                </svg>
+
+                <div
+                    class="mx-auto py-4 bg-[#FFD54F] text-center font-semibold"
+                >
+                    Powered by Cafeine!
+                </div>
+            </footer>
+        </div>
     </body>
 </html>
