@@ -14,7 +14,7 @@ const { menu } = Astro.params
 const { messages, categories } = CoffeeMenus.find(({ title }) => title.toLowerCase() === menu)
 ---
 
-<Layout title="Primero cafe: Carta">
+<Layout title={`Primero cafe: ${menu[0].toUpperCase() + menu.slice(1)}`}>
 	{
 		categories.map(({ title, subtitle, products }) => (
 			<CoffeeSection title={title} subtitle={subtitle} messages={messages}>
