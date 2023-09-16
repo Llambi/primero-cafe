@@ -1,7 +1,7 @@
 import React from 'react'
 import { Button, Dialog, DialogHeader, DialogBody, DialogFooter } from '@material-tailwind/react'
 
-export function PopoverInfo(props) {
+export function ModalInfo(props) {
 	const [open, setOpen] = React.useState(false)
 
 	const handleOpen = () => setOpen(!open)

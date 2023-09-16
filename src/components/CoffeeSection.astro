@@ -1,5 +1,5 @@
 ---
-import { PopoverInfo } from '@components/PopoverInfo.jsx'
+import { ModalInfo } from '@components/ModalInfo.tsx'
 const { id, title, subtitle, messages } = Astro.props
 ---
 
@@ -22,7 +22,7 @@ const { id, title, subtitle, messages } = Astro.props
 			</h2>
 			{
 				messages?.disclaimers && (
-					<PopoverInfo
+					<ModalInfo
 						client:load
 						disclaimers={messages?.disclaimers}
 						is:inline
