@@ -1,33 +1,33 @@
 ---
-const { name, price } = Astro.props;
+const { name, price, key } = Astro.props
 ---
 
-<product-coffe>
-    <article class="py-2 px-2 flex gap-6 justify-between items-center w-full">
-        <h3 class="font-medium">{name}</h3>
-        <p class="price min-w-fit rn-highlight text-white">
-            {price} €
-        </p>
-    </article>
+<product-coffe key={`product-${key}`}>
+	<article class="flex w-full items-center justify-between gap-6 px-2 py-2">
+		<h3 class="font-medium">{name}</h3>
+		<p class="price rn-highlight min-w-fit text-white">
+			{price} €
+		</p>
+	</article>
 </product-coffe>
 
 <script>
-    import { annotateElement } from "@lib/RoughNotation.mts";
+	import { annotateElement } from '@lib/RoughNotation.mts'
 
-    class ProductCoffe extends HTMLElement {
-        constructor() {
-            super();
+	class ProductCoffe extends HTMLElement {
+		constructor() {
+			super()
 
-            const $price: HTMLElement = this.querySelector(".price");
-            annotateElement($price, {
-                type: "highlight",
-                color: "#000",
-                padding: [8, 12],
-                strokeWidth: 2,
-                iterations: 6,
-            });
-        }
-    }
+			const $price: HTMLElement = this.querySelector('.price')
+			annotateElement($price, {
+				type: 'highlight',
+				color: '#000',
+				padding: [8, 12],
+				strokeWidth: 2,
+				iterations: 6
+			})
+		}
+	}
 
-    customElements.define("product-coffe", ProductCoffe);
+	customElements.define('product-coffe', ProductCoffe)
 </script>

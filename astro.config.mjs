@@ -1,10 +1,11 @@
-import { defineConfig } from "astro/config";
+import { defineConfig } from 'astro/config'
+import tailwind from '@astrojs/tailwind'
 
-import tailwind from "@astrojs/tailwind";
+import react from '@astrojs/react'
 
 // https://astro.build/config
 export default defineConfig({
-    integrations: [tailwind()],
-    site: "https://llambi.github.io",
-    base: "/primero-cafe",
-});
+	integrations: [tailwind(), react()],
+	site: 'https://llambi.github.io',
+	base: '/primero-cafe'
+})

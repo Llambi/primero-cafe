@@ -1,40 +1,65 @@
 ---
-const { title, subtitle } = Astro.props;
+import { PopoverInfo } from '@components/PopoverInfo.jsx'
+const { id, title, subtitle, messages } = Astro.props
 ---
 
-<section-coffe>
-    <section class="mx-auto mt-12 py-2 px-1 w-10/12 rn-box">
-        <h2 class="mb-8 text-center font-semibold text-3xl">
-            {title}
-        </h2>
-        {
-            subtitle && (
-                <p class="px-2 py-1 mx-auto mb-5 w-fit font-thin text-xs text-center bg-gray-300/10 rounded-md">
-                    {subtitle}
-                </p>
-            )
-        }
-        <div class="flex flex-col gap-8 flex-wrap">
-            <slot />
-        </div>
-    </section>
+<section-coffe key={`section-${id}`}>
+	<section class="rn-box relative mx-auto mt-12 w-10/12 px-1 py-2">
+		{
+			messages && (
+				<div class="mb-4 flex flex-col gap-2">
+					{messages?.shedule && (
+						<p class="max-w-4 absolute -left-6 -top-5 z-10 mx-auto h-auto -rotate-12 rounded-full border-black/20 px-2 py-1 text-center text-lg shadow-md backdrop-blur-sm">
+							{messages.shedule}
+						</p>
+					)}
+				</div>
+			)
+		}
+		<div class="align-center mb-8 flex items-center justify-center gap-4 text-3xl font-semibold">
+			<h2 class="text-3xl font-semibold">
+				{title}
+			</h2>
+			{
+				messages?.disclaimers && (
+					<PopoverInfo
+						client:load
+						disclaimers={messages?.disclaimers}
+						is:inline
+						key={`section-popover-${id}`}
+						id={`section-popver-${id}`}
+					/>
+				)
+			}
+		</div>
+		{
+			subtitle && (
+				<p class="mx-auto mb-5 w-fit rounded-md bg-gray-300/10 px-2 py-1 text-center text-xs font-thin">
+					{subtitle}
+				</p>
+			)
+		}
+		<div class="flex flex-col flex-wrap gap-8">
+			<slot />
+		</div>
+	</section>
 </section-coffe>
 
 <script>
-    import { annotateElement } from "@lib/RoughNotation.mts";
+	import { annotateElement } from '@lib/RoughNotation.mts'
 
-    class SectionCoffe extends HTMLElement {
-        constructor() {
-            super();
-            const $section = this.querySelector("section");
-            annotateElement($section, {
-                type: "box",
-                color: "#FFD54F",
-                padding: [4, 12],
-                strokeWidth: 2,
-                iterations: 6,
-            });
-        }
-    }
-    customElements.define("section-coffe", SectionCoffe);
+	class SectionCoffe extends HTMLElement {
+		constructor() {
+			super()
+			const $section = this.querySelector('section')
+			annotateElement($section, {
+				type: 'box',
+				color: '#FFD54F',
+				padding: [4, 12],
+				strokeWidth: 2,
+				iterations: 6
+			})
+		}
+	}
+	customElements.define('section-coffe', SectionCoffe)
 </script>

@@ -1,29 +1,27 @@
 ---
-import Layout from "@layouts/Layout.astro";
-import CoffeeMenus from "@data/CoffeMenus.json";
-import CoffeeProduct from "@components/CoffeProduct.astro";
-import CoffeeSection from "@components/CoffeeSection.astro";
+import Layout from '@layouts/Layout.astro'
+import CoffeeMenus from '@data/CoffeMenus.json'
+import CoffeeProduct from '@components/CoffeProduct.astro'
+import CoffeeSection from '@components/CoffeeSection.astro'
 
 export function getStaticPaths() {
-    return CoffeeMenus.map(({ title }) => ({
-        params: { menu: title.toLowerCase() },
-    }));
+	return CoffeeMenus.map(({ title }) => ({
+		params: { menu: title.toLowerCase() }
+	}))
 }
 
-const { menu } = Astro.params;
-const { title, categories } = CoffeeMenus.find(
-    ({ title }) => title.toLowerCase() === menu
-);
+const { menu } = Astro.params
+const { messages, categories } = CoffeeMenus.find(({ title }) => title.toLowerCase() === menu)
 ---
 
 <Layout title="Primero cafe: Carta">
-    {
-        categories.map(({ title, subtitle, products }) => (
-            <CoffeeSection title={title} subtitle={subtitle}>
-                {products.map((product) => (
-                    <CoffeeProduct {...product} />
-                ))}
-            </CoffeeSection>
-        ))
-    }
+	{
+		categories.map(({ title, subtitle, products }) => (
+			<CoffeeSection title={title} subtitle={subtitle} messages={messages}>
+				{products.map((product) => (
+					<CoffeeProduct {...product} />
+				))}
+			</CoffeeSection>
+		))
+	}
 </Layout>

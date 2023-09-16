@@ -80,6 +80,19 @@
   {
     "id": 1,
     "title": "Desayunos",
+    "messages": 
+      {
+        "shedule": "De 9:00 a 12:00H",
+        "disclaimers": [
+          {"text":"Aumento de 0.20€ en los siguientes casos:", "type":"main"},
+          {"text":"Tamaño grande", "type":"normal"},
+          {"text":"Origen de la semana", "type":"normal"},
+          {"text":"Leche sin lactosa", "type":"normal"},
+          {"text":"Leche de avena", "type":"normal"},
+          {"text":"Con hielo", "type":"normal"}
+        ]
+      }
+    ,
     "categories":[
       {
         "id":0,
