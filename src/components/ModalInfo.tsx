@@ -1,5 +1,6 @@
 import React from 'react'
-import { Button, Dialog, DialogHeader, DialogBody, DialogFooter } from '@material-tailwind/react'
+import pkg from '@material-tailwind/react'
+const { Button, Dialog, DialogHeader, DialogBody } = pkg
 
 export function ModalInfo(props) {
 	const [open, setOpen] = React.useState(false)
