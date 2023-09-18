@@ -23,9 +23,8 @@ const { id, title, subtitle, messages } = Astro.props
 			{
 				messages?.disclaimers && (
 					<ModalInfo
-						client:load
+						client:only
 						disclaimers={messages?.disclaimers}
-						is:inline
 						key={`section-popover-${id}`}
 						id={`section-popver-${id}`}
 					/>

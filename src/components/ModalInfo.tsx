@@ -1,12 +1,14 @@
 import React from 'react'
-import pkg from '@material-tailwind/react'
-const { Button, Dialog, DialogHeader, DialogBody } = pkg
+import { Button, Dialog, DialogHeader, DialogBody } from '@material-tailwind/react'
 
 export function ModalInfo(props) {
 	const [open, setOpen] = React.useState(false)
 
 	const handleOpen = () => setOpen(!open)
-	const title = props.disclaimers.at(0).text
+	
+	const titleDiscalimers = props.disclaimers.filter(({ type }) => type === 'main').map(({ text }) => text)
+	const normalDisclaimers = props.disclaimers.filter(({ type }) => type === 'normal').map(({ text }) =>  text )
+
 	return (
 		<>
 			<Button
@@ -16,9 +18,11 @@ export function ModalInfo(props) {
 				?
 			</Button>
 			<Dialog open={open} handler={handleOpen}>
-				<DialogHeader>{title}</DialogHeader>
+				<DialogHeader>{titleDiscalimers.map((text, idx) => (
+					<p key={`${props.id}-title-${idx}`}>{text}</p>
+				))}</DialogHeader>
 				<DialogBody divider>
-					{props.disclaimers.slice(1, -1).map(({ text }, idx) => (
+					{normalDisclaimers.map(( text , idx) => (
 						<p key={`${props.id}-text-${idx}`}>{text}</p>
 					))}
 				</DialogBody>
